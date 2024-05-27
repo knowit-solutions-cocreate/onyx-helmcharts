@@ -57,6 +57,7 @@ spec:
   tls:
     - hosts:
         - {{ .Values.ingress.hostname | quote }}
+        - 3000-{{ .Values.ingress.hostname | quote }}
     {{- if .Values.ingress.useCertManager }}
       secretName: tls-cert-{{ include "library-chart.fullname" . }}
     {{- end }}
